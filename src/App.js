@@ -16,14 +16,12 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log('searchField', searchField)
 		const newFilteredMonsters = monsters.filter((monster) => {
 			return monster.name
 				.toLocaleLowerCase()
 				.includes(searchField.toLocaleLowerCase());
 		});
 		setFilteredMonsters(newFilteredMonsters);
-		console.log(newFilteredMonsters)
 	}, [monsters, searchField]);
 
 	const onSearchChange = (event) => {
